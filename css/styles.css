@@ -1,0 +1,321 @@
+/*Paul Irish boxing. Importante agregar*/
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /*Para agregar 1rem = 10px*/
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*Para que todo el body tenga el mismo tipo de fuente*/
+body {
+    font-family: 'Open Sans', sans-serif; /*Fuente de Sans*/
+    font-size: 1.6rem; /*16px*/
+    line-height: 2; /*Interlineado de palabras con 20px de separacion*/
+}
+
+/*------------------------- GLOBALES -----------------------------*/
+
+/*Contenedor de la pagina*/
+.contenedor {
+    max-width: 120rem; /**/
+    margin: 0 auto;
+    width: 95%; /*Para que el contenido no llegue hasta los extremos de la ventana del navegador*/
+}
+
+/*Subtitulos con una fuente distinta al body*/
+h1, h2, h3, h4 {
+    font-family: 'PT Sans', sans-serif;
+}
+
+/*Tamaños de los diferentes subtitulos*/
+h1 {
+    font-size: 4.8rem; /*48px*/
+}
+h2 {
+    font-size: 4rem; /*40px*/
+    line-height: 4rem; /*Interlineado de 15px*/
+}
+h3 {
+    font-size: 3.2rem; /*32px*/
+}
+h4 {
+    font-size: 2.8rem; /*28px*/
+}
+
+/*Adaptar imagenes al contenedor*/
+img {
+    max-width: 100%;
+}
+
+/*--------------------- UTILIDADES -------------------------------*/
+
+/*Centrar el texto*/
+.centrar-texto {
+    text-align: center;
+}
+
+/*Quitar margen*/
+.no-margin {
+    margin: 0;
+}
+
+/*Botones*/
+.boton {
+    display: block;
+    text-align: center; /*Centramos el texto*/
+    padding: .5rem 3rem; /*Separacion de bordes internos*/
+    margin: 2rem 0 2rem 0; /*Margen del boton*/
+    color: white; /*Color texto*/
+    text-decoration: none; /*Quitamos subrayado del link*/
+    font-family: 'PT Sans', sans-serif; /*Agregamos tipo de fuente*/
+    font-weight: 700;
+    text-transform: uppercase; /*Texto en mayusculas*/
+    font-size: 1.5rem;
+    flex: 0 0 100%; /*Para el boton de enviar formulario*/
+}
+.boton:hover {
+    cursor: pointer; /*Agregamos a manita cuando se coloque el mouse encima de un boton*/
+}
+@media (min-width: 480px) {
+    .boton {
+        display: inline-block;
+        flex: 0 0 auto; /*Para el boton de enviar formulario*/
+    }
+}
+.boton-primario {
+    background-color: black;
+}
+.boton-secundario {
+    background-color: #75371B;
+}
+
+/*Grid*/
+@media (min-width: 768px) {
+    .grid {
+        display: flex;
+        justify-content: space-between; /*Espacio entre a los lados del contenido*/
+        flex-wrap: wrap;
+    }
+    .centrar-columna {
+        justify-content: center; /*Parar centrar las columnas dentro del grid*/
+    }
+    .columnas-4 {
+        flex: 0 0 calc(33.3% - 1rem);
+    }
+    .columnas-6 {
+        flex: 0 0 calc(50% - 1rem);
+    }
+    .columnas-8 {
+        flex: 0 0 calc(66.6% - 1rem);
+    }
+    .columnas-10 {
+        flex: 0 0 calc(83.33% - 1rem); /*(12 entre 10) y luego multiplicamos por 10 para el %*/
+    }
+    .columnas-12 {
+        flex: 0 0 100%;
+    }
+}
+
+
+/*------------------- DEMAS ------------------------------*/
+
+/*Header*/ /*Podemos usar 'mq' para crear otro @media y ahorrar tiempo*/
+@media (min-width:768px) { /*Media para una tablet*/
+    .barra {
+        display: flex;
+        justify-content: space-between; /*Agregamos espacios entre textos*/
+        align-items: center; /*Alineamos al centro los links*/
+    }
+}
+.site-header {
+    background-image: url(../img/banner.jpg); /*Imagen de fondo del header de la pagina*/
+    background-repeat: no-repeat;
+    background-position: center center; /*Centrar la imagen*/
+    background-size: cover; /*Que la imagen cubra todo el espacio que se le da*/
+    height: 60rem; /*600px de altura para la imagen*/
+}
+.site-header a {
+    color: white; /*Que todos los enlaes sean color blanco*/
+    text-decoration: none; /*Quitar barra abajo de los enlaces*/
+}
+.site-header h1 span {
+    font-weight: 700; /*Agregamos mas grosor al texto de span*/
+    color: #75371B;
+    text-shadow: 1px  0px 0px white, /*Le agregamos un contorno blanco a las letras de color café del titulo*/
+               0px  1px 0px white,
+              -1px  0px 0px white,
+               0px -1px 0px white;
+}
+.site-header h1 {
+    text-align: center;
+    font-weight: 400; /*Ponemos el h1 de un grosor mas delgado*/
+}
+
+/*Navegacion*/
+.navegacion a {
+    text-align: center; /*Centramos los links de la barra de navegacion*/
+    display: block;
+    font-size: 1.8rem; /*Agrandamos el texto*/
+}
+@media (min-width:768px) {
+    .navegacion a {
+        display: inline; /*Hacemos que la barra de links se alinee de forma horizontal*/
+        margin-right: 2rem;
+    }
+    .navegacion a:last-of-type {
+        margin: 0; /*Para quitar el margen del ultimo link de la barra. Usando last-of-type*/
+    }
+}
+
+/*Texto inferior del header*/
+.texto-header {
+    color: white; /*Color del texto*/
+    text-align: center; /*Centrar texto*/
+    margin-top: 5rem; /*Margen superior del texto*/
+}
+@media (min-width:768px) {
+    .texto-header {
+        margin-top: 15rem; /*Agregamos un margen arriba del texto inferior del header*/
+    }
+}
+.texto-header p {
+    font-size: 2.3rem; /*Agrandamos el tamaño del parrafo*/
+}
+
+/*Contenido principal*/
+.contenido-principal {
+    display: flex;
+    flex-wrap: wrap; /*Para que al usar una pantalla de telefono o achicar la ventana de la computadora se coloquen uno abajo del otro*/
+}
+.blog,
+.seccion-cursos {
+    /*Tambien se puede colocar como flex: 0 0 100%; pero lo dejaremos asi*/
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
+}
+.seccion-cursos {
+    order: -1; /*Para que los cursos se muestren primero en nuesta pagina achicada*/
+}
+
+/*Ajustes de pantalla de movil o tableta*/
+@media (min-width: 768px) {
+
+    /*Justificamos el contenido para que se vea bien en dispositivos moviles*/
+    .contenido-principal {
+        justify-content: space-between;
+    }
+    .blog {
+        flex-basis: 66.6%;
+        order: -1; /*Colocamos el blog del lado izquierdo de la pantalla*/
+    }
+    .seccion-cursos {
+        flex-basis: calc(33.3% - 4rem);
+    }
+    
+}
+
+/*Ajustar las entradas de blog*/
+.entrada-blog {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid #75371B;
+}
+.entrada-blog:last-of-type {
+    border-bottom: none; /*Agarramos la ultima entrada del blog y le quitamos la barra marron*/
+}
+.entrada-blog .imagen {
+    flex: 0 0 40%;
+    margin-right: 2rem; /*Margen a la derecha de la imagen de blog*/
+}
+.entrada-blog .contendio-blog {
+    flex: 0 0 calc(60% - 2rem);
+}
+.imagen img {
+    border-radius: 10%; /*PROPIO: Le agregamos esquinas redondeadas a las imagenes del blog*/
+}
+
+/*Ajustes de los cursos y talleres*/
+.lista-cursos {
+    padding: 0; /*Damos espacio entre cada curso*/
+    list-style: none;
+}
+.cursos {
+    border-radius: 2%; /*PROPIO: le damos una curva a las separaciones para darle estilo*/
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 3px solid #75371B;
+}
+.cursos:last-of-type {
+    border-bottom: none; /*Agarramos la ultima entrada del blog y le quitamos la barra marron*/
+}
+.cursos p {
+    font-family: 'PT Sans', sans-serif; /*Agregamos el tipo de fuente*/
+    font-weight: 700; /*Grosor de la fuente*/
+    font-size: 2rem; /*Tamaño de la fuente*/
+}
+.cursos p span,
+.cursos p.descripcion /*Para que se aplique el cambio de fuente*/ {
+    font-weight: 400; /*Grosor de la fuente*/
+}
+
+/*Footer*/
+.site-footer {
+    background-color: black;
+    padding: 3rem;
+    margin-top: 4rem;
+}
+.site-footer p {
+    color: white;
+    font-size: 4rem;
+    font-weight: 400;
+    font-family: 'PT Sans', sans-serif;
+    text-align: center;
+}
+.site-footer span {
+    font-weight: 700;
+}
+.site-footer .navegacion a {
+    text-align: center; /*Centramos los links de la barra de navegacion*/
+    display: block;
+    font-size: 1.8rem; /*Agrandamos el texto*/
+    color: white;
+    text-decoration: none;
+    display: inline; /*Hacemos que la barra de links se alinee de forma horizontal*/
+    margin-right: 2rem;
+}
+
+/*Formulario de contacto*/
+.formulario-contacto {
+    background-color: white; /*Fondo blanco para que agarre todo los media query*/
+    padding: 5rem;
+}
+@media (min-width: 768px) {
+    .formulario-contacto {
+        margin-top: -10rem; /*Ponemos margen negativo para colocarlo encima de la foto de fondo*/
+    }
+}
+.formulario-contacto .campo {
+    display: flex;
+    justify-content: space-between; /*Damos espacio entre el nombre y el campo de rellenado del formulario*/
+    margin-bottom: 2rem; /*Agregamos margen abajo de cada campo del formulario*/
+}
+.formulario-contacto .campo label{
+    flex: 0 0 8rem; /*Modificar los label*/
+}
+.formulario-contacto .campo input:not([type="submit"]){
+    flex: 1; /*Para que cada input abarque toda el area disponible menos el boton de enviar*/
+    border: 1px solid #e1e1e1; /*Le modificamos el borde de cada campo con un grosor de 1px y un color gris*/
+}
+.formulario-contacto textarea{
+    flex: 1; /*Para que el textarea abarque toda el area disponible menos el boton de enviar*/
+    border: 1px solid #e1e1e1; /*Le modificamos el borde de cada campo con un grosor de 1px y un color gris*/
+    padding: 1rem;
+    height: 20rem;
+}
+.formulario-contacto .enviar {
+    display: flex;
+    justify-content: flex-end; /*Movemos el boton de enviar a la derecha*/
+}

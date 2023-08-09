@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros contactos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css"> <!--Agregamos la hoja de estilos CSS-->
+    <link rel="stylesheet" href="css/normalize.css"> <!--Agregamos el normalize-->
+</head>
+
+<!--Cuerpo de la pagina web-->
+<body>
+    
+    <!--Header de la pagina junto a su imagen de fondo-->
+    <header class="site-header">
+
+        <!--Contenedor de texto-->
+        <div class="contenedor">
+
+            <!--Division para la barra de navegacion-->
+            <div class="barra">
+
+                <!--Titulo de la pagina con link a la misma-->
+                <a href="/index.html">
+                    <h1 class="no-margin">Blog<span>DeCafé</span></h1>
+                </a>
+
+                <!--Links de la barra de navegacion-->
+                <nav class="navegacion">
+                    <a href="nosotros.html">Sobre nosotros</a>
+                    <a href="curso.html">Curso</a>
+                    <a href="contacto.html">Contactos</a>
+                </nav>
+
+            </div>
+
+            <!--Texto inferior del header-->
+            <div class="texto-header">
+                <h3 class="no-margin">Blog de café con consejos y cursos</h3>
+                <p class="no-margin">Aprende de los expertos con las mejores recetas y consejos</p>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!--Main de nuestra pagina de formulario de contacto-->
+    <main class="contenedor">
+
+        <h2 class="centrar-texto">Contáctanos</h2>
+
+        <!--Agregamos el grid-->
+        <div class="grid centrar-columna">
+
+            <!--Agregamos la imagen de contacto-->
+            <div class="columnas-12">
+                <img src="img/contacto.jpg" alt="Imagen de contacto">
+            </div>
+
+            <!--Agregamos el div para el formulario-->
+            <div class="columnas-10 formulario-contacto">
+
+                <!--Creamos el forulario-->
+                <form action="#">
+
+                    <!--1º campo-->
+                    <div class="campo">
+
+                        <!--Campo para el nombre-->
+                        <label for="nombre">Nombre: </label>
+                        <input type="text" id="nombre" placeholder="Nombre completo">
+
+                    </div>
+
+                    <!--2º campo-->
+                    <div class="campo">
+
+                        <!--Campo para el correo electronico-->
+                        <label for="email">E-mail: </label>
+                        <input type="email" id="email" placeholder="Dirección de correo electrónico">
+                        
+                    </div>
+
+                    <!--3º campo-->
+                    <div class="campo mensaje">
+
+                        <!--Campo para agregar un mensaje-->
+                        <label for="mensaje">Mensaje: </label>
+                        <textarea id="mensaje"></textarea>
+                        
+                    </div>
+
+                    <!--Boton de enviar formulario-->
+                    <div class="campo enviar">
+                        
+                        <input type="submit" value="Enviar" class="boton boton-primario">
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <!--Footer de la pagina-->
+    <footer class="site-footer">
+        <div class="contenedor">
+
+            <!--Barra de navegacion del footer-->
+            <div class="barra">
+
+                <p class="no-margin">Blog<span>DeCafé</span></p>
+
+                <!--Links de la barra de navegacion del footer-->
+                <nav class="navegacion">
+                    <a href="nosotros.html">Sobre nosotros</a>
+                    <a href="curso.html">Curso</a>
+                    <a href="contacto.html">Contactos</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
